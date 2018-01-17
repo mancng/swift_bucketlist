@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A869B06B200F1E1700725809 /* AddItemTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A869B06A200F1E1700725809 /* AddItemTableViewControllerDelegate.swift */; };
+		A8C7A4F1200EEB2B00C0743C /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C7A4F0200EEB2B00C0743C /* AddItemTableViewController.swift */; };
 		A8FE88AD200EE10400280C58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FE88AC200EE10400280C58 /* AppDelegate.swift */; };
-		A8FE88AF200EE10400280C58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FE88AE200EE10400280C58 /* ViewController.swift */; };
+		A8FE88AF200EE10400280C58 /* BucketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FE88AE200EE10400280C58 /* BucketListViewController.swift */; };
 		A8FE88B2200EE10400280C58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FE88B0200EE10400280C58 /* Main.storyboard */; };
 		A8FE88B4200EE10400280C58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8FE88B3200EE10400280C58 /* Assets.xcassets */; };
 		A8FE88B7200EE10400280C58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FE88B5200EE10400280C58 /* LaunchScreen.storyboard */; };
@@ -34,9 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A869B06A200F1E1700725809 /* AddItemTableViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewControllerDelegate.swift; sourceTree = "<group>"; };
+		A8C7A4F0200EEB2B00C0743C /* AddItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
 		A8FE88A9200EE10400280C58 /* bucket_list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bucket_list.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FE88AC200EE10400280C58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A8FE88AE200EE10400280C58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A8FE88AE200EE10400280C58 /* BucketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListViewController.swift; sourceTree = "<group>"; };
 		A8FE88B1200EE10400280C58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8FE88B3200EE10400280C58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8FE88B6200EE10400280C58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				A8FE88AC200EE10400280C58 /* AppDelegate.swift */,
-				A8FE88AE200EE10400280C58 /* ViewController.swift */,
+				A8FE88AE200EE10400280C58 /* BucketListViewController.swift */,
 				A8FE88B0200EE10400280C58 /* Main.storyboard */,
+				A8C7A4F0200EEB2B00C0743C /* AddItemTableViewController.swift */,
 				A8FE88B3200EE10400280C58 /* Assets.xcassets */,
 				A8FE88B5200EE10400280C58 /* LaunchScreen.storyboard */,
 				A8FE88B8200EE10400280C58 /* Info.plist */,
+				A869B06A200F1E1700725809 /* AddItemTableViewControllerDelegate.swift */,
 			);
 			path = bucket_list;
 			sourceTree = "<group>";
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8FE88AF200EE10400280C58 /* ViewController.swift in Sources */,
+				A8FE88AF200EE10400280C58 /* BucketListViewController.swift in Sources */,
 				A8FE88AD200EE10400280C58 /* AppDelegate.swift in Sources */,
+				A869B06B200F1E1700725809 /* AddItemTableViewControllerDelegate.swift in Sources */,
+				A8C7A4F1200EEB2B00C0743C /* AddItemTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
