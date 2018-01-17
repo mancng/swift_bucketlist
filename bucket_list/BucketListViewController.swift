@@ -33,19 +33,53 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
         return cell
     }
     
+    //Get the clicked item/row
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected")
+//        performSegue(withIdentifier: "EditItemSegue", sender: indexPath)
+    }
+    
+    //Tap the accessory icon for action
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        performSegue(withIdentifier: "EditItemSegue", sender: indexPath)
+    }
+    
+    //Swipe to delete
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        tableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navigationController = segue.destination as! UINavigationController
-        let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
-        addItemTableViewController.delegate = self
+        
+        if segue.identifier == "AddItemSegue" {
+            let navigationController = segue.destination as! UINavigationController
+            let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
+            addItemTableViewController.delegate = self
+        } else if segue.identifier == "EditItemSegue" {
+            let navigationController = segue.destination as! UINavigationController
+            let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
+            addItemTableViewController.delegate = self
+            let indexPath = sender as! NSIndexPath
+            let item = items[indexPath.row]
+            addItemTableViewController.item = item
+            addItemTableViewController.indexPath = indexPath
+        }
+
     }
     
     func cancelBtnPressed(by controller: AddItemTableViewController) {
-        print("I'm the hidden controller, but I am responding to the cancel button press on the top view controller.")
         dismiss(animated: true, completion: nil)
     }
     
-    func itemSaved(by controller: AddItemTableViewController, with text: String) {
-        items.append(text)
+    func itemSaved(by controller: AddItemTableViewController, with text: String, at indexPath: NSIndexPath?) {
+        
+        if let ip = indexPath{
+            items[ip.row] = text
+        } else {
+            items.append(text)
+        }
+
         tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }

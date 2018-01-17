@@ -11,6 +11,9 @@ import UIKit
 class AddItemTableViewController: UITableViewController {
     
     weak var delegate: AddItemTableViewControllerDelegate?
+    
+    var item: String?
+    var indexPath: NSIndexPath?
 
     @IBOutlet var AddTextField: UITextField!
     
@@ -22,11 +25,12 @@ class AddItemTableViewController: UITableViewController {
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         print("Save")
         let text = AddTextField.text!
-        delegate?.itemSaved(by: self, with: text)
+        delegate?.itemSaved(by: self, with: text, at: indexPath)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AddTextField.text = item
 
 
     }

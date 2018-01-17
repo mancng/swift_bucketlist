@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListItemCell" id="14l-0r-Rmc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ListItemCell" id="14l-0r-Rmc">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="14l-0r-Rmc" id="FFz-6Y-dLP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -35,10 +35,13 @@
                     <navigationItem key="navigationItem" title="Bucket List" id="rnM-bW-JU2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bcG-Cu-LOL">
                             <connections>
-                                <segue destination="9BW-PY-fAF" kind="presentation" id="jP6-iY-FY8"/>
+                                <segue destination="9BW-PY-fAF" kind="presentation" identifier="AddItemSegue" id="jP6-iY-FY8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="9BW-PY-fAF" kind="presentation" identifier="EditItemSegue" id="Jvb-S6-Mjb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7Q-WH-z6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,4 +145,7 @@
             <point key="canvasLocation" x="1080" y="115.14242878560721"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jvb-S6-Mjb"/>
+    </inferredMetricsTieBreakers>
 </document>
