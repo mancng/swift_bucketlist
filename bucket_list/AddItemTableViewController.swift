@@ -18,21 +18,19 @@ class AddItemTableViewController: UITableViewController {
     @IBOutlet var AddTextField: UITextField!
     
     @IBAction func cancelBtnPressed(_ sender: UIBarButtonItem) {
-        print("Cancel")
         delegate?.cancelBtnPressed(by: self)
     }
     
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
-        print("Save")
         let text = AddTextField.text!
-        delegate?.itemSaved(by: self, with: text, at: indexPath)
+        if text.count > 0 {
+            delegate?.itemSaved(by: self, with: text, at: indexPath)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         AddTextField.text = item
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +38,5 @@ class AddItemTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
 
 }

@@ -14,8 +14,6 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        print("Loaded")
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +21,7 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -50,13 +49,14 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
         tableView.reloadData()
     }
     
+    //MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "AddItemSegue" {
-            let navigationController = segue.destination as! UINavigationController
-            let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
-            addItemTableViewController.delegate = self
-        } else if segue.identifier == "EditItemSegue" {
+        let navigationController = segue.destination as! UINavigationController
+        let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
+        addItemTableViewController.delegate = self
+        
+        if segue.identifier == "EditItemSegue" {
             let navigationController = segue.destination as! UINavigationController
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
             addItemTableViewController.delegate = self
@@ -65,8 +65,9 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
             addItemTableViewController.item = item
             addItemTableViewController.indexPath = indexPath
         }
-
     }
+    
+    //MARK: Delegate
     
     func cancelBtnPressed(by controller: AddItemTableViewController) {
         dismiss(animated: true, completion: nil)
@@ -79,7 +80,6 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
         } else {
             items.append(text)
         }
-
         tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }
